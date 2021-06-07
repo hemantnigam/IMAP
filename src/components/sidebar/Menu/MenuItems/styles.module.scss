@@ -1,0 +1,13 @@
+.menu{
+  &__items{
+    // padding: 1rem !important;
+    &__icon{
+      font-size: 20px !important;
+    }
+    &__badge{
+      *.ant-badge-count {
+        box-shadow: none;
+      }
+    }
+  }
+}

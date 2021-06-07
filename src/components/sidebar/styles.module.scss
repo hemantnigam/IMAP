@@ -1,5 +1,27 @@
 .logo {
   height: 32px;
   margin: 16px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 1);
+}
+
+.group{
+  margin-top: 30px;
+  &__title{
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.menu{
+  &__items{
+    // padding-left: 1rem !important;
+    &__icon{
+      font-size: 20px !important;
+    }
+    &__badge{
+      *.ant-badge-count {
+        box-shadow: none;
+      }
+    }
+  }
 }
