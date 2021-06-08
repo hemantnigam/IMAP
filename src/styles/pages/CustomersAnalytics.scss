@@ -1,0 +1,25 @@
+@import "../colors";
+
+.customer-analytics {
+  background-color: $grey1;
+  height: 100%;
+  .header {
+    .export-data {
+      .datepicker {
+        .date-divider {
+          color: $grey4;
+        }
+      }
+    }
+  }
+  .chart-container {
+    .bar-chart {
+      min-width: 500px;
+      width: 70%;
+    }
+    .geo-chart {
+      min-width: 300px;
+      width:30%
+    }
+  }
+}
