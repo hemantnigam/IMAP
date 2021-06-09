@@ -48,6 +48,11 @@ function HeaderMenu({
   return (
     <Header
       className={styles.header}
+      style={{
+        position: "sticky",
+        zIndex: 1023,
+        top: 0,
+      }}
     >
       <Row wrap={false} justify="space-between">
         <Col flex="none">

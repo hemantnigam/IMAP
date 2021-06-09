@@ -31,6 +31,14 @@ function Sidebar({
       collapsible={collapsible}
       collapsed={collapsed}
       width="300"
+      style={{
+        overflow: "auto",
+        height: "100vh",
+        position: "sticky",
+        top: 0,
+        left: 0,
+        zIndex: 1023,
+      }}
     >
       <div className={styles.logo} />
       <Menu
@@ -42,6 +50,7 @@ function Sidebar({
           icon={<HomeOutlined className={styles.menu__items__icon}/>}
           notificationCount={25}
           className={styles.menu__items}
+          path="/"
         >
           Dashboard
         </MenuItems>
@@ -57,8 +66,11 @@ function Sidebar({
             key='/analytics'
             icon={<LineChartOutlined />}
             title="Analytics"
+            path="/analytics"
           >
-            <MenuItems>
+            <MenuItems
+              path="/analytics/customers"
+            >
               Customers
             </MenuItems>
             <MenuItems>

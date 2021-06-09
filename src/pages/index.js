@@ -7,9 +7,10 @@ import {
 import {
   Layout
 } from 'antd';
-import Dashboard from './Dashboard';
 import Sidebar from '../components/sidebar';
 import Header from '../components/header';
+import Dashboard from './Dashboard';
+import CustomersAnalytics from './CustomersAnalytics';
 import './styles.scss';
 
 function Pages() {
@@ -30,8 +31,11 @@ function Pages() {
             className="site-layout-background"
           >
             <Switch>
-              <Route path="/">
+              <Route exact path="/">
                 <Dashboard />
+              </Route>
+              <Route path="/analytics/customers">
+                <CustomersAnalytics/>
               </Route>
             </Switch>
           </Content>
