@@ -1,9 +1,12 @@
 @import "../colors";
+@import "../common";
 
 .customer-analytics {
   background-color: $grey1;
   height: 100%;
+  @extend .p-5;
   .header {
+    @extend .mb-5;
     .export-data {
       .datepicker {
         .date-divider {
@@ -14,12 +17,13 @@
   }
   .chart-container {
     .bar-chart {
-      min-width: 500px;
-      width: 70%;
+      @extend .mr-5;
+      @extend .border-radius-2;
+      width: 60%;
     }
     .geo-chart {
-      min-width: 300px;
-      width:30%
+      @extend .border-radius-2;
+      width:40%
     }
   }
 }
