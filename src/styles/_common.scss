@@ -132,14 +132,16 @@ $sizes: (
   @extend .mx-5;
   &__header {
     @extend .h4;
-    @extend .p-4;
+    @extend .p-3;
     background-color: white;
   }
   &__content {
-    .ag-ltr {
-      @extend .py-4;
-      @extend .border-radius-2;
-      background-color: white;
+    .ant-table-thead {
+      tr{
+        .ant-table-cell {
+          text-transform: capitalize;
+        }
+      }
     }
   }
 }
