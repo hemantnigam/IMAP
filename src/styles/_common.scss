@@ -137,11 +137,17 @@ $sizes: (
   }
   &__content {
     .ant-table-thead {
-      tr{
+      tr {
         .ant-table-cell {
           text-transform: capitalize;
         }
       }
     }
   }
+}
+.ant-card {
+  @extend .border-radius-3;
+  -webkit-box-shadow: 0 7px 14px 0 rgb(65 69 88 / 10%),
+    0 3px 6px 0 rgb(0 0 0 / 7%);
+  box-shadow: 0 7px 14px 0 rgb(65 69 88 / 10%), 0 3px 6px 0 rgb(0 0 0 / 7%);
 }

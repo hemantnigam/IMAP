@@ -7,7 +7,7 @@ function BarChart({ data }) {
     item.type = "bar";
     item.barWidth = 15;
     item.itemStyle = {
-        borderRadius:[10,10,0,0],
+        borderRadius:[7,7,0,0],
         color:colorList[index]
     }
   });

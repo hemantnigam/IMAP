@@ -18,11 +18,9 @@
   .chart-container {
     .bar-chart {
       @extend .mr-5;
-      @extend .border-radius-2;
       width: 60%;
     }
     .geo-chart {
-      @extend .border-radius-2;
       width:40%
     }
   }

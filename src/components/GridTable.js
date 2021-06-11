@@ -1,11 +1,17 @@
 import React from "react";
-import {Table} from "antd";
+import { Table,Card } from "antd";
 
 function GridTable({ rowData, columnsData }) {
   return (
     <>
-      <div className="grid-table__header">Top Customers</div>
-      <Table className="grid-table__content" dataSource={rowData} columns={columnsData} />;
+      <Card bordered={false}>
+        <div className="grid-table__header">Top Customers</div>
+        <Table
+          className="grid-table__content"
+          dataSource={rowData}
+          columns={columnsData}
+        />
+      </Card>
     </>
   );
 }
