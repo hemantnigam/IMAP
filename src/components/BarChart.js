@@ -2,43 +2,69 @@ import React from "react";
 import ReactECharts from "echarts-for-react";
 
 function BarChart({ data }) {
-    const colorList = ["#11A1FD","#5A75F8"]
-  data.forEach((item,index) => {
+  const colorList = ["#11A1FD", "#5A75F8"];
+  data.forEach((item, index) => {
     item.type = "bar";
     item.barWidth = 15;
     item.itemStyle = {
-        borderRadius:[7,7,0,0],
-        color:colorList[index]
-    }
+      borderRadius: [7, 7, 0, 0],
+      color: colorList[index],
+    };
   });
   const options = {
     title: {
       text: "Customers Report",
     },
-    tooltip:{
-        show:true,
-        backgroundColor:"rgba(0,0,0,1)",
-        borderColor:"rgba(0,0,0,1)",
-        textStyle:{
-            color:"#fff"
-        }
+    tooltip: {
+      show: true,
+      backgroundColor: "rgba(0,0,0,1)",
+      borderColor: "rgba(0,0,0,1)",
+      textStyle: {
+        color: "#fff",
+      },
     },
     legend: {
-        right:0,
-        itemGap:30,
+      right: 0,
+      itemGap: 30,
       data: ["Active", "New"],
     },
     xAxis: {
       type: "category",
       data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      axisTick: {
+        show: false,
+      },
+      axisLine: {
+        lineStyle: {
+          color: "#0000000a",
+          dashOffset: 5,
+        },
+      },
+      axisLabel: {
+        color: "#00000054",
+      },
     },
     yAxis: {
       type: "value",
+      axisLine: {
+        lineStyle: {
+          dashOffset: 5,
+        },
+      },
+      axisLabel: {
+        color: "#00000054",
+      },
+      splitLine: {
+        show: true,
+        lineStyle: {
+          type: [5, 5],
+        },
+      },
     },
-    grid:{
-        left:30,
-        right:10,
-        bottom:20
+    grid: {
+      left: 30,
+      right: 10,
+      bottom: 20,
     },
     animation: true,
     animationDuration: 70,
