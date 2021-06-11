@@ -4,7 +4,8 @@ import "../styles/pages/CustomersAnalytics.scss";
 import GridTable from "../components/gridtable/GridTable";
 import { tableData } from "../mockData";
 import BarChart from "../components/barchart/BarChart";
-import PieChart from "../components/piechart/PieChart";
+import PieChart from "../components/piechart";
+import GeoChart from "../components/geochart";
 
 function CustomersAnalytics() {
   const colorList = [
@@ -95,6 +96,7 @@ function CustomersAnalytics() {
         </Card>
         <Card bordered={false} className="geo-chart">
           <PieChart />
+          {/* <GeoChart /> */}
         </Card>
       </div>
       <div className="customer-analytics-table grid-table">

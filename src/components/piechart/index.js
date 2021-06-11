@@ -18,7 +18,7 @@ function PieChart({ data }) {
       {
         name: "Customer Analytics",
         type: "pie",
-        radius: ["60%", "70%"],
+        radius: ["45%", "70%"],
         avoidLabelOverlap: false,
         itemStyle: {
             borderColor: '#fff',
