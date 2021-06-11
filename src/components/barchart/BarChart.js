@@ -17,11 +17,6 @@ function BarChart({ data }) {
     },
     tooltip: {
       show: true,
-      backgroundColor: "rgba(0,0,0,1)",
-      borderColor: "rgba(0,0,0,1)",
-      textStyle: {
-        color: "#fff",
-      },
     },
     legend: {
       right: 0,

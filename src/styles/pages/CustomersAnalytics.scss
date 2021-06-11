@@ -18,10 +18,23 @@
   .chart-container {
     .bar-chart {
       @extend .mr-5;
-      width: 60%;
+      width: 65%;
     }
     .geo-chart {
-      width:40%
+      width: 35%;
+    }
+  }
+  .grid-table {
+    .name-avatar {
+      @extend .d-flex;
+      @extend .justify-content-center;
+      @extend .align-items-center;
+      @extend .mr-2;
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      color: white;
+      font-size: 20px;
     }
   }
 }

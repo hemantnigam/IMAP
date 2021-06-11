@@ -139,6 +139,8 @@ $sizes: (
     .ant-table-thead {
       tr {
         .ant-table-cell {
+          border-top: 1px solid #f0f0f0;
+          background: unset;
           text-transform: capitalize;
         }
       }
