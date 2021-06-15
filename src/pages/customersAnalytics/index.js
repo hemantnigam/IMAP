@@ -1,11 +1,11 @@
 import React from "react";
 import { Card, DatePicker, Button } from "antd";
-import "../styles/pages/CustomersAnalytics.scss";
-import GridTable from "../components/gridtable/GridTable";
-import { tableData } from "../mockData";
-import BarChart from "../components/barchart/BarChart";
-import PieChart from "../components/piechart";
-import GeoChart from "../components/geochart";
+import "./styles.scss";
+import GridTable from "../../components/gridtable/GridTable";
+import { tableData } from "../../mockData";
+import BarChart from "../../components/barchart/BarChart";
+import PieChart from "../../components/piechart";
+import GeoChart from "../../components/geochart";
 
 function CustomersAnalytics() {
   const colorList = [
@@ -26,6 +26,7 @@ function CustomersAnalytics() {
 
   tableData.forEach((data,index)=>{
     data.no = index+1;
+    data.key = index+1;
   })
   
   const columnsData = Object.keys(tableData[0]).map((item) => ({
@@ -91,6 +92,7 @@ function CustomersAnalytics() {
         </div>
       </div>
       <div className="chart-container d-flex">
+
         <Card bordered={false} className="bar-chart">
           <BarChart data={barChartData} />
         </Card>

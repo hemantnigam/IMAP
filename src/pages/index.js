@@ -10,7 +10,7 @@ import {
 import Sidebar from '../components/sidebar';
 import Header from '../components/header';
 import Dashboard from './Dashboard';
-import CustomersAnalytics from './CustomersAnalytics';
+import CustomersAnalytics from './customersAnalytics';
 import './styles.scss';
 
 function Pages() {
@@ -37,6 +37,9 @@ function Pages() {
               <Route path="/analytics/customers">
                 <CustomersAnalytics/>
               </Route>
+              {/* <Route path="/analytics/pricing">
+                <Pricing/>
+              </Route> */}
             </Switch>
           </Content>
         </Layout>

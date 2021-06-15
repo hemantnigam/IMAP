@@ -13,7 +13,8 @@ import {
   CalendarOutlined,
   PieChartOutlined
 } from '@ant-design/icons';
-import MenuItems from './Menu/MenuItems';
+import { useLocation } from 'react-router-dom';
+import MenuItem from './Menu/MenuItems';
 import styles from './styles.module.scss';
 
 const { SubMenu } = Menu;
@@ -24,7 +25,10 @@ function Sidebar({
   collapsed
 }) {
   const { Sider } = Layout;
-
+  let location = useLocation();
+  
+  const currentSubMenu = [location.pathname.includes('/analytics') && '/analytics'];
+  
   return (
     <Sider
       trigger={trigger}
@@ -44,18 +48,20 @@ function Sidebar({
       <Menu
         mode="inline"
         theme="dark"
-        defaultSelectedKeys={['/']}
+        defaultSelectedKeys={[location.pathname]}
+        defaultOpenKeys={currentSubMenu}
       >
-        <MenuItems
+        <MenuItem
           icon={<HomeOutlined className={styles.menu__items__icon}/>}
           notificationCount={25}
           className={styles.menu__items}
+          key="/"
           path="/"
         >
           Dashboard
-        </MenuItems>
+        </MenuItem>
         <Menu.ItemGroup
-          title={
+          title={!collapsed &&
             <span className={styles.group__title}>
               Management
             </span>
@@ -66,73 +72,90 @@ function Sidebar({
             key='/analytics'
             icon={<LineChartOutlined />}
             title="Analytics"
-            path="/analytics"
           >
-            <MenuItems
+            <MenuItem
+              key="/analytics/customers"
               path="/analytics/customers"
             >
               Customers
-            </MenuItems>
-            <MenuItems>
+            </MenuItem>
+            <MenuItem
+              key="/analytics/products"
+              path="/analytics/products"
+            >
               Products
-            </MenuItems>
+            </MenuItem>
           </SubMenu>
-          <MenuItems
+          <MenuItem
             icon={<UserOutlined className={styles.menu__items__icon}/>}
             notificationCount={25}
+            key="/customers"
+            path="/customers"
           >
             Customers
-          </MenuItems>
-          <MenuItems
+          </MenuItem>
+          <MenuItem
             icon={<TagOutlined className={styles.menu__items__icon}/>}
             notificationCount={25}
+            key="/products"
+            path="/products"
           >
             Products
-          </MenuItems>
-          <MenuItems
+          </MenuItem>
+          <MenuItem
             icon={<ShoppingCartOutlined className={styles.menu__items__icon}/>}
+            key="/orders"
+            path="/orders"
           >
             Orders
-          </MenuItems>
-          <MenuItems
+          </MenuItem>
+          <MenuItem
             icon={<FileProtectOutlined className={styles.menu__items__icon}/>}
+            key="/invoices"
+            path="/invoices"
           >
             Invoices
-          </MenuItems>
+          </MenuItem>
         </Menu.ItemGroup>
         <Menu.ItemGroup
-          title={
+          title={!collapsed &&
             <span className={styles.group__title}>
               Pages
             </span>
           }
           className={styles.group}
         >
-          <MenuItems
+          <MenuItem
             icon={<LockOutlined className={styles.menu__items__icon}/>}
             className={styles.menu__items}
+            key="/authentication"
+            path="/authentication"
           >
             Authentication
-          </MenuItems>
-          <MenuItems
+          </MenuItem>
+          <MenuItem
             icon={<CalendarOutlined className={styles.menu__items__icon}/>}
+            key="/calendar"
+            path="/calendar"
           >
             Calendar
-          </MenuItems>
+          </MenuItem>
         </Menu.ItemGroup>
         <Menu.ItemGroup
-          title={
+          title={!collapsed &&
             <span className={styles.group__title}>
               Components
             </span>
           }
           className={styles.group}
         >
-          <MenuItems
+          <MenuItem
             icon={<PieChartOutlined className={styles.menu__items__icon}/>}
+            key="/charts"
+            path="/charts"
           >
             Charts
-          </MenuItems>
+          </MenuItem>
         </Menu.ItemGroup>
       </Menu>
     </Sider>

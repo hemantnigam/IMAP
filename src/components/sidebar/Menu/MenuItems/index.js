@@ -7,40 +7,57 @@ import {
 import {Link} from 'react-router-dom';
 import styles from './styles.module.scss';
 
-function MenuItems({
-  icon,
+
+function MenuItem({
   notificationCount,
-  className,
   children,
   path,
   ...rest
 }) {
   return (
     <Menu.Item
-      icon={icon}
       className={styles.menu__items}
-      key={path}
       {...rest}
     >
-      <Link to={path}>
-        <Row wrap={false} justify="space-between">
-          <Col flex="none">
-            {children}
-          </Col>
-          {
-            notificationCount && (
+      {
+        path ? (
+            <Link to={path}>
+              <Row wrap={false} justify="space-between">
+                <Col flex="none">
+                  {children}
+                </Col>
+                {
+                  notificationCount && (
+                    <Col flex="none">
+                      <Badge
+                        count={notificationCount}
+                        style={{ boxShadow: 'none' }}
+                      />
+                    </Col>
+                  )
+                }
+              </Row>
+            </Link>
+          ) : (
+            <Row wrap={false} justify="space-between">
               <Col flex="none">
-                <Badge
-                  count={notificationCount}
-                  style={{ boxShadow: 'none' }}
-                />
+                {children}
               </Col>
-            )
-          }
-        </Row>
-      </Link>
+              {
+                notificationCount && (
+                  <Col flex="none">
+                    <Badge
+                      count={notificationCount}
+                      style={{ boxShadow: 'none' }}
+                    />
+                  </Col>
+                )
+              }
+            </Row>
+          )
+      }
     </Menu.Item>
   )
 }
 
-export default MenuItems
+export default MenuItem
