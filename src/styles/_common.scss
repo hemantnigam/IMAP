@@ -152,18 +152,19 @@ $sizes: (
   -webkit-box-shadow: 0 7px 14px 0 rgb(65 69 88 / 10%),
     0 3px 6px 0 rgb(0 0 0 / 7%);
   box-shadow: 0 7px 14px 0 rgb(65 69 88 / 10%), 0 3px 6px 0 rgb(0 0 0 / 7%);
+  .ant-card-body{
+    height: 100%;
+  }
 }
 
 .imap-charts {
+  height: 100%;
+  >div {
+    height: 100%;
+  }
   .highcharts-container {
-    width: 100% !important;
-    // height: 100% !important;
-    svg {
-      width: 100% !important;
-      // height: 100% !important;
-      .highcharts-credits {
-        display: none;
-      }
+    .highcharts-credits {
+      display: none;
     }
   }
 }

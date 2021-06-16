@@ -1,46 +1,55 @@
 import React from "react";
-import ReactECharts from "echarts-for-react";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
+import ImapChart from "../imap-chart";
 
 function PieChart({ data }) {
   const options = {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie",
+    },
     title: {
       text: "Customer's Analytics",
+      align: "left",
+      style: {
+        fontWeight: "bold",
+        fontSize: 20,
+      },
     },
     tooltip: {
-      trigger: "item",
+      pointFormat: "{series.name}: <b>{point.y}$</b>",
+    },
+    accessibility: {
+      point: {
+        valueSuffix: "$",
+      },
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        innerSize: "60%",
+        dataLabels: {
+          enabled: true,
+          format: "<b>{point.name}</b>: {point.y}$",
+        },
+      },
     },
     series: [
       {
-        name: "Customer Analytics",
-        type: "pie",
-        radius: ["40%", "60%"],
-        avoidLabelOverlap: false,
-        itemStyle: {
-          borderColor: "#fff",
-          borderWidth: 1,
-        },
-        label: {
-          show: true,
-          color:"#00000090"
-        },
+        name: "Total Spendings",
+        colorByPoint: true,
         data: data,
       },
     ],
-    animation: true,
-    animationDuration: 1170,
-    animationDurationUpdate: 1000,
-    animationEasing: "linear",
   };
   return (
-    <div>
-        <ReactECharts
-          option={options}
-          notMerge
-          lazyUpdate
-          theme="light"
-          opts={{ renderer: "svg" }}
-        />
-    </div>
+    <ImapChart>
+      <HighchartsReact highcharts={Highcharts} options={options} />
+    </ImapChart>
   );
 }
 

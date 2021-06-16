@@ -3,12 +3,15 @@
 
 .customer-analytics {
   .chart-container {
+    height: 360px;
     .bar-chart {
       @extend .mr-5;
       width: 65%;
+      height: 100%;
     }
     .geo-chart {
       width: 35%;
+      height: 100%;
     }
   }
   .grid-table {

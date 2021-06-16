@@ -3,7 +3,7 @@ import { Card, DatePicker, Button } from "antd";
 import "./styles.scss";
 import GridTable from "../../components/gridtable/GridTable";
 import { tableData } from "../../mockData";
-import BarChart from "../../components/barchart/BarChart";
+import BarChart from "../../components/barchart";
 import PieChart from "../../components/piechart";
 import GeoChart from "../../components/geochart";
 
@@ -45,22 +45,22 @@ function CustomersAnalytics() {
     },
   ];
   const pieChartData = [
-    { value: 1048, name: "India", },
-    { value: 735, name: "USA" },
-    { value: 580, name: "UK" },
-    { value: 484, name: "UAE" },
-    { value: 300, name: "Singapore" },
-    { value: 300, name: "Malaysia" },
-    { value: 300, name: "Norway" },
-    { value: 300, name: "France" },
-    { value: 1048, name: "Indiana" },
-    { value: 335, name: "Germany" },
-    { value: 280, name: "England" },
-    { value: 684, name: "Indonesia" },
-    { value: 200, name: "Iceland" },
-    { value: 500, name: "Greenland" },
-    { value: 30, name: "Mexico" },
-    { value: 90, name: "Sweden" },
+    { y: 1048, name: "India", },
+    { y: 735, name: "USA" },
+    { y: 580, name: "UK" },
+    { y: 484, name: "UAE" },
+    { y: 300, name: "Singapore" },
+    { y: 300, name: "Malaysia" },
+    { y: 300, name: "Norway" },
+    { y: 300, name: "France" },
+    { y: 1048, name: "Indiana" },
+    { y: 335, name: "Germany" },
+    { y: 280, name: "England" },
+    { y: 684, name: "Indonesia" },
+    { y: 200, name: "Iceland" },
+    { y: 500, name: "Greenland" },
+    { y: 30, name: "Mexico" },
+    { y: 90, name: "Sweden" },
   ]
 
   React.useEffect(() => {
@@ -85,10 +85,11 @@ function CustomersAnalytics() {
       }
     });
     pieChartData.forEach((item,index)=>{
-      item.top=40;
-      item.itemStyle = {
-        color:colorList[index%colorList.length]
-      }
+      // item.top=40;
+      // item.itemStyle = {
+      //   color:colorList[index%colorList.length]
+      // }
+      item.color = colorList[index%colorList.length];
     })
   });
 
