@@ -1,9 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import CustomersAnalytics from "./CustomersAnalytics";
-import ProductAnalytics from "./ProductAnalytics";
+import CustomersAnalytics from "../customersAnalytics";
+import ProductAnalytics from "../ProductAnalytics";
 import { DatePicker, Button } from "antd";
-import "../styles/pages/Analytics.scss";
+import "./styles.scss";
 
 const Analytics = withRouter((props) => {
   const componentName = props?.location?.pathname.substring(props?.location?.pathname.lastIndexOf('/')+1,props?.location?.pathname.length);

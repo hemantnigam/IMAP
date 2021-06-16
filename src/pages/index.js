@@ -11,7 +11,7 @@ import Sidebar from '../components/sidebar';
 import Header from '../components/header';
 import Dashboard from './Dashboard';
 import './styles.scss';
-import Analytics from './Analytics';
+import Analytics from './analytics';
 
 function Pages() {
 
