@@ -81,10 +81,6 @@ function CustomersAnalytics() {
       }
     });
     pieChartData.forEach((item,index)=>{
-      // item.top=40;
-      // item.itemStyle = {
-      //   color:colorList[index%colorList.length]
-      // }
       item.color = colorList[index%colorList.length];
     })
   });

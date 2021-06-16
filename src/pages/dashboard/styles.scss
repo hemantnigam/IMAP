@@ -1,6 +1,7 @@
+@import "../../styles/colors";
+@import "../../styles/common";
+
 .layout {
-    div {
-        background-color: grey;
-        border: 1px solid black;
-    }
+  background-color: $grey1;
+  min-height: 100vh;
 }
