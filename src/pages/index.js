@@ -9,7 +9,7 @@ import {
 } from 'antd';
 import Sidebar from '../components/sidebar';
 import Header from '../components/header';
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard';
 import './styles.scss';
 import Analytics from './analytics';
 

@@ -1,11 +1,10 @@
 import React from "react";
-import { Card, DatePicker, Button } from "antd";
+import { Card } from "antd";
 import "./styles.scss";
 import GridTable from "../../components/gridtable/GridTable";
 import { tableData } from "../../mockData";
 import BarChart from "../../components/barchart";
 import PieChart from "../../components/piechart";
-import GeoChart from "../../components/geochart";
 
 function CustomersAnalytics() {
   const colorList = [
@@ -20,9 +19,6 @@ function CustomersAnalytics() {
     "#8477ea",
     "#37a2da",
   ];
-  const disabledDate = (current) => {
-    return current && current > new Date();
-  };
 
   tableData.forEach((data,index)=>{
     data.no = index+1;
