@@ -27,11 +27,11 @@ $sizes: (
   .ml-#{$i} {
     margin-left: #{5 * $i}px;
   }
-  .mx-#{$i} {
+  .my-#{$i} {
     margin-top: #{5 * $i}px;
     margin-bottom: #{5 * $i}px;
   }
-  .my-#{$i} {
+  .mx-#{$i} {
     margin-left: #{5 * $i}px;
     margin-right: #{5 * $i}px;
   }
@@ -53,11 +53,11 @@ $sizes: (
   .pl-#{$i} {
     padding-left: #{5 * $i}px;
   }
-  .px-#{$i} {
+  .py-#{$i} {
     padding-top: #{5 * $i}px;
     padding-bottom: #{5 * $i}px;
   }
-  .py-#{$i} {
+  .px-#{$i} {
     padding-left: #{5 * $i}px;
     padding-right: #{5 * $i}px;
   }
@@ -129,7 +129,7 @@ $sizes: (
   border-color: $primary;
 }
 .grid-table {
-  @extend .mx-5;
+  @extend .my-5;
   &__header {
     @extend .h4;
     @extend .p-3;
@@ -152,4 +152,18 @@ $sizes: (
   -webkit-box-shadow: 0 7px 14px 0 rgb(65 69 88 / 10%),
     0 3px 6px 0 rgb(0 0 0 / 7%);
   box-shadow: 0 7px 14px 0 rgb(65 69 88 / 10%), 0 3px 6px 0 rgb(0 0 0 / 7%);
+}
+
+.imap-charts {
+  .highcharts-container {
+    width: 100% !important;
+    // height: 100% !important;
+    svg {
+      width: 100% !important;
+      // height: 100% !important;
+      .highcharts-credits {
+        display: none;
+      }
+    }
+  }
 }
