@@ -38,51 +38,13 @@ function GeoChart() {
       .catch((err) => {});
   };
   const options = {
-    // chart: {
-    //   events: {
-    //     drilldown: function (e) {
-    //       if (!e.seriesOptions) {
-    //         const chart = this,
-    //           mapKey = "countries/us/" + e.point.drilldown + "-all";
-
-    //         // Handle error, the timeout is cleared on success
-    //         let fail = setTimeout(() => {
-    //           if (!Highcharts.maps[mapKey]) {
-    //             chart.showLoading("Loading... " + e.point.name);
-    //             fail = setTimeout(() => {
-    //               chart.hideLoading();
-    //             }, 1000);
-    //           }
-    //         }, 3000);
-
-    //         // Show the spinner
-    //         chart.showLoading("Spinner..."); // Font Awesome spinner
-
-    //         // Load the drilldown map
-
-    //         // Hide loading and add series
-    //         chart.hideLoading();
-    //         clearTimeout(fail);
-    //         chart.addSeriesAsDrilldown(e.point, {
-    //           name: e.point.name,
-    //           data: data,
-    //           dataLabels: {
-    //             enabled: true,
-    //             format: "{point.name}",
-    //           },
-    //         });
-    //       }
-
-    //       this.setTitle(null, { text: e.point.name });
-    //     },
-    //     drillup: function () {
-    //       this.setTitle(null, { text: "" });
-    //     },
-    //   },
-    // },
-
     title: {
-      text: "Highcharts Map Drilldown",
+      text: "Geographical Analysis",
+      align: "left",
+      style: {
+        fontWeight: "bold",
+        fontSize: 20,
+      },
     },
 
     subtitle: {
@@ -112,7 +74,7 @@ function GeoChart() {
       map: {
         states: {
           hover: {
-            color: "#EEDD66",
+            color: "#0c2556",
           },
         },
       },

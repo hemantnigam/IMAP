@@ -127,18 +127,18 @@ function Dashboard() {
       </div>
       <div
         key={key + 4}
-        data-grid={{ x: 9, y: 0, w: 6, h: 12, minW: 6, minH: 12 }}
+        data-grid={{ x: 9, y: 0, w: 6, h: 12, minW: 3, minH: 6 }}
       >
         <Card bordered={false}>
           <PieChart data={pieChartData} />
         </Card>
       </div>
-      <div key={key + 5} data-grid={{ x: 0, y: 3, w: 9, h: 18,minW:9, minH:18}}>
+      <div key={key + 5} data-grid={{ x: 0, y: 3, w: 9, h: 18,minW:3, minH:6}}>
         <Card bordered={false}>
           <GeoChart/>
         </Card>
       </div>
-      <div key={key + 6} data-grid={{ x: 9, y: 12, w: 6, h: 9,minW:6, minH:9 }}>
+      <div key={key + 6} data-grid={{ x: 9, y: 12, w: 6, h: 9,minW:3, minH:6 }}>
         <Card bordered={false}>
           <BarChart data={barChartData || []} />
         </Card>
