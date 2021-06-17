@@ -9,7 +9,9 @@ import {
 } from 'antd';
 import Sidebar from '../components/sidebar';
 import Header from '../components/header';
-import Dashboard from './dashboard';
+import Dashboard from './Dashboard';
+import CustomersAnalytics from './customersAnalytics';
+import Invoices from './invoices';
 import './styles.scss';
 import Analytics from './analytics';
 
@@ -40,6 +42,9 @@ function Pages() {
               {/* <Route path="/analytics/pricing">
                 <Pricing/>
               </Route> */}
+              <Route path="/invoices">
+                <Invoices/>
+              </Route>
             </Switch>
           </Content>
         </Layout>
