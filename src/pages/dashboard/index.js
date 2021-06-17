@@ -4,6 +4,7 @@ import PriceCard from "../../components/price-card";
 import BarChart from "../../components/barchart";
 import GeoChart from "../../components/geochart";
 import PieChart from "../../components/piechart";
+import LineChart from "../../components/linechart";
 import Highcharts from "highcharts";
 import HighchartsMaps from "highcharts/highmaps";
 import { Card } from "antd";
@@ -25,8 +26,7 @@ function Dashboard() {
   let key = 0;
   const [innerWidth, setInnerWidth] = useState(0);
   const [barChartData, setBarChartData] = useState();
-
-  const pieChartData = [
+  const [pieChartData, setPieChartData] = useState([
     { y: 1048, name: "India" },
     { y: 735, name: "USA" },
     { y: 580, name: "UK" },
@@ -43,7 +43,7 @@ function Dashboard() {
     { y: 500, name: "Greenland" },
     { y: 30, name: "Mexico" },
     { y: 90, name: "Sweden" },
-  ];
+  ]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -64,12 +64,16 @@ function Dashboard() {
           name: "New",
         },
       ]);
-      pieChartData.forEach((item, index) => {
-        item.color = colorList[index % colorList.length];
-      });
+      if (pieChartData) {
+        const tempData = pieChartData.map((item, index) => {
+          item.color = colorList[index % colorList.length];
+        });
+        setPieChartData(tempData);
+      }
+
       reFlowAllCharts();
     }, 0);
-    console.log("changes")
+    console.log("changes");
   }, []);
   const reFlowAllCharts = () => {
     for (let i = 0; i < Highcharts.charts.length; i += 1) {
@@ -82,7 +86,7 @@ function Dashboard() {
         HighchartsMaps.charts[i].reflow(); // here is the magic to update charts' looking
       }
     }
-  }
+  };
   const onLayoutChange = () => {
     reFlowAllCharts();
   };
@@ -108,9 +112,9 @@ function Dashboard() {
         data-grid={{ x: 3, y: 0, w: 3, h: 3, minW: 3, minH: 3 }}
       >
         <PriceCard
-          label="Total Profit"
-          actualValue="$95,595"
-          percentValue="3.55"
+          label="Total Expenses"
+          actualValue="$5,595"
+          percentValue="2.4"
           isProfit={false}
         />
       </div>
@@ -119,9 +123,9 @@ function Dashboard() {
         data-grid={{ x: 6, y: 0, w: 3, h: 3, minW: 3, minH: 3 }}
       >
         <PriceCard
-          label="Total Profit"
-          actualValue="$95,595"
-          percentValue="3.55"
+          label="Total Users"
+          actualValue="15,595"
+          percentValue="3.6"
           isProfit={false}
         />
       </div>
@@ -133,14 +137,28 @@ function Dashboard() {
           <PieChart data={pieChartData} />
         </Card>
       </div>
-      <div key={key + 5} data-grid={{ x: 0, y: 3, w: 9, h: 18,minW:3, minH:6}}>
+      <div
+        key={key + 5}
+        data-grid={{ x: 12, y: 12, w: 6, h: 9, minW: 3, minH: 6 }}
+      >
         <Card bordered={false}>
-          <GeoChart/>
+          <GeoChart />
         </Card>
       </div>
-      <div key={key + 6} data-grid={{ x: 9, y: 12, w: 6, h: 9,minW:3, minH:6 }}>
+      <div
+        key={key + 6}
+        data-grid={{ x: 0, y: 3, w: 9, h: 9, minW: 3, minH: 6 }}
+      >
         <Card bordered={false}>
           <BarChart data={barChartData || []} />
+        </Card>
+      </div>
+      <div
+        key={key + 7}
+        data-grid={{ x: 0, y: 12, w: 9, h: 9, minW: 3, minH: 6 }}
+      >
+        <Card bordered={false}>
+          <LineChart />
         </Card>
       </div>
     </GridLayout>

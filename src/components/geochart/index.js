@@ -11,16 +11,14 @@ dataModule(Highcharts);
 
 function GeoChart() {
   const [data, setData] = useState([]);
-  const [separators, setSeparators] = useState([]);
 
   useEffect(() => {
-    getData("countries/us/us-all", true);
+    getData("countries/us/us-all");
     return () => {
       setData([]);
-      setSeparators([]);
     };
   }, []);
-  const getData = (mapkey, evaluateSeperator = false) => {
+  const getData = (mapkey) => {
     axios
       .get("https://code.highcharts.com/mapdata/" + mapkey + ".geo.json")
       .then((res) => res.data)
@@ -30,10 +28,6 @@ function GeoChart() {
           d.value = i;
         });
         setData(tempdata);
-        if (evaluateSeperator) {
-          const tempSeparators = Highcharts.geojson(result, "mapline");
-          setSeparators(tempSeparators);
-        }
       })
       .catch((err) => {});
   };
@@ -88,16 +82,7 @@ function GeoChart() {
           enabled: true,
           format: "{point.properties.postal-code}",
         },
-      },
-      {
-        type: "mapline",
-        data: separators,
-        color: "silver",
-        enableMouseTracking: false,
-        animation: {
-          duration: 500,
-        },
-      },
+      }
     ],
 
     drilldown: {
