@@ -62,7 +62,11 @@ function BarChart({ data }) {
   };
   return (
     <ImapChart>
-      <HighchartsReact highcharts={Highcharts} options={options} />
+      <HighchartsReact
+        containerProps={{ style: { width: '100%', height: '100%' } }}
+        highcharts={Highcharts}
+        options={options}
+      />
     </ImapChart>
   );
 }

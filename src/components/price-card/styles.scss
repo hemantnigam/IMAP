@@ -3,4 +3,36 @@
 
 .price-card {
   height: 100%;
+  .ant-card {
+    @extend .d-flex;
+    @extend .justify-content-center;
+    .ant-card-body {
+      @extend .d-flex;
+      @extend .justify-content-center;
+      @extend .align-items-center;
+      @extend .flex-col;
+      .price-card-content {
+        .label {
+          color: $grey5;
+        }
+        .value {
+          @extend .align-items-center;
+          .actual-value {
+            font-weight: $font-weight-medium;
+            font-size: 2.2rem;
+          }
+          .net-percent-value {
+            @extend .ml-4;
+            font-weight: $font-weight-medium;
+          }
+          .loss {
+            color: $danger;
+          }
+          .profit {
+            color: $success;
+          }
+        }
+      }
+    }
+  }
 }

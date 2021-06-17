@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "antd";
-import "./styles.scss"
+import "./styles.scss";
 
 function PriceCard({ label, actualValue, percentValue, isProfit }) {
   const [className, setClassName] = useState();
@@ -18,10 +18,12 @@ function PriceCard({ label, actualValue, percentValue, isProfit }) {
   return (
     <div className="price-card">
       <Card bordered={false}>
-        <div className="label">{label}</div>
-        <div className="value d-flex">
-          <div className="actual-value">{actualValue}</div>
-          <div className={className}>{percentageValue}</div>
+        <div className="price-card-content">
+          <div className="label">{label}</div>
+          <div className="value d-flex">
+            <div className="actual-value">{actualValue}</div>
+            <div className={className}>{percentageValue}</div>
+          </div>
         </div>
       </Card>
     </div>

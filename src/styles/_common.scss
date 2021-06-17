@@ -149,46 +149,22 @@ $sizes: (
 }
 .ant-card {
   height: 100%;
-  @extend .d-flex;
-  @extend .justify-content-center;
   @extend .border-radius-3;
   -webkit-box-shadow: 0 7px 14px 0 rgb(65 69 88 / 10%),
     0 3px 6px 0 rgb(0 0 0 / 7%);
   box-shadow: 0 7px 14px 0 rgb(65 69 88 / 10%), 0 3px 6px 0 rgb(0 0 0 / 7%);
   .ant-card-body {
-    @extend .d-flex;
-    @extend .justify-content-center;
-    @extend .flex-col;
     height: 100%;
     width: 100%;
-    .label {
-      color: $grey5;
-    }
-    .value {
-      @extend .align-items-center;
-      .actual-value {
-        font-weight: $font-weight-medium;
-        font-size: 28px;
-      }
-      .net-percent-value {
-        @extend .ml-4;
-        font-weight: $font-weight-medium;
-      }
-      .loss {
-        color: $danger;
-      }
-      .profit {
-        color: $success;
-      }
-    }
   }
 }
 
 .imap-charts {
   height: 100%;
-  > div {
-    height: 100%;
-  }
+  // > div {
+  //   height: 100% !important;
+  //   width: 100% !important;
+  // }
   .highcharts-container {
     .highcharts-credits {
       display: none;
