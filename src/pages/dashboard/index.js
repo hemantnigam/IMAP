@@ -5,6 +5,7 @@ import BarChart from "../../components/barchart";
 import GeoChart from "../../components/geochart";
 import PieChart from "../../components/piechart";
 import LineChart from "../../components/linechart";
+import DashboardHeader from "../../components/dashboard-header";
 import Highcharts from "highcharts";
 import HighchartsMaps from "highcharts/highmaps";
 import { Card } from "antd";
@@ -91,77 +92,80 @@ function Dashboard() {
     reFlowAllCharts();
   };
   return (
-    <GridLayout
-      className="layout"
-      cols={15}
-      rowHeight={30}
-      width={innerWidth}
-      autoSize={true}
-      onLayoutChange={() => onLayoutChange()}
-    >
-      <div key={key} data-grid={{ x: 0, y: 0, w: 3, h: 3, minW: 3, minH: 3 }}>
-        <PriceCard
-          label="Total Profit"
-          actualValue="$95,595"
-          percentValue="3.55"
-          isProfit={true}
-        />
-      </div>
-      <div
-        key={key + 1}
-        data-grid={{ x: 3, y: 0, w: 3, h: 3, minW: 3, minH: 3 }}
+    <div className="dashboard">
+      {/* <DashboardHeader /> */}
+      <GridLayout
+        className="layout"
+        cols={15}
+        rowHeight={30}
+        width={innerWidth}
+        autoSize={true}
+        onLayoutChange={() => onLayoutChange()}
       >
-        <PriceCard
-          label="Total Expenses"
-          actualValue="$5,595"
-          percentValue="2.4"
-          isProfit={false}
-        />
-      </div>
-      <div
-        key={key + 2}
-        data-grid={{ x: 6, y: 0, w: 3, h: 3, minW: 3, minH: 3 }}
-      >
-        <PriceCard
-          label="Total Users"
-          actualValue="15,595"
-          percentValue="3.6"
-          isProfit={false}
-        />
-      </div>
-      <div
-        key={key + 4}
-        data-grid={{ x: 9, y: 0, w: 6, h: 12, minW: 3, minH: 6 }}
-      >
-        <Card bordered={false}>
-          <PieChart data={pieChartData} />
-        </Card>
-      </div>
-      <div
-        key={key + 5}
-        data-grid={{ x: 12, y: 12, w: 6, h: 9, minW: 3, minH: 6 }}
-      >
-        <Card bordered={false}>
-          <GeoChart />
-        </Card>
-      </div>
-      <div
-        key={key + 6}
-        data-grid={{ x: 0, y: 3, w: 9, h: 9, minW: 3, minH: 6 }}
-      >
-        <Card bordered={false}>
-          <BarChart data={barChartData || []} />
-        </Card>
-      </div>
-      <div
-        key={key + 7}
-        data-grid={{ x: 0, y: 12, w: 9, h: 9, minW: 3, minH: 6 }}
-      >
-        <Card bordered={false}>
-          <LineChart />
-        </Card>
-      </div>
-    </GridLayout>
+        <div key={key} data-grid={{ x: 0, y: 0, w: 3, h: 3, minW: 3, minH: 3 }}>
+          <PriceCard
+            label="Total Profit"
+            actualValue="$95,595"
+            percentValue="3.55"
+            isProfit={true}
+          />
+        </div>
+        <div
+          key={key + 1}
+          data-grid={{ x: 3, y: 0, w: 3, h: 3, minW: 3, minH: 3 }}
+        >
+          <PriceCard
+            label="Total Expenses"
+            actualValue="$5,595"
+            percentValue="2.4"
+            isProfit={false}
+          />
+        </div>
+        <div
+          key={key + 2}
+          data-grid={{ x: 6, y: 0, w: 3, h: 3, minW: 3, minH: 3 }}
+        >
+          <PriceCard
+            label="Total Users"
+            actualValue="15,595"
+            percentValue="3.6"
+            isProfit={false}
+          />
+        </div>
+        <div
+          key={key + 4}
+          data-grid={{ x: 9, y: 0, w: 6, h: 12, minW: 3, minH: 6 }}
+        >
+          <Card bordered={false}>
+            <PieChart data={pieChartData} />
+          </Card>
+        </div>
+        <div
+          key={key + 5}
+          data-grid={{ x: 12, y: 12, w: 6, h: 9, minW: 3, minH: 6 }}
+        >
+          <Card bordered={false}>
+            <GeoChart />
+          </Card>
+        </div>
+        <div
+          key={key + 6}
+          data-grid={{ x: 0, y: 3, w: 9, h: 9, minW: 3, minH: 6 }}
+        >
+          <Card bordered={false}>
+            <BarChart data={barChartData || []} />
+          </Card>
+        </div>
+        <div
+          key={key + 7}
+          data-grid={{ x: 0, y: 12, w: 9, h: 9, minW: 3, minH: 6 }}
+        >
+          <Card bordered={false}>
+            <LineChart />
+          </Card>
+        </div>
+      </GridLayout>
+    </div>
   );
 }
 

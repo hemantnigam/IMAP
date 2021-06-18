@@ -1,0 +1,12 @@
+@import "../../styles/common";
+
+.dashboard-slider {
+  @extend .p-2;
+  @extend .d-flex;
+  @extend .align-items-center;
+  @extend .justify-content-between;
+  height: 60px;
+  &__name {
+    font-size: $font-large;
+  }
+}

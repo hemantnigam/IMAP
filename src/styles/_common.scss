@@ -145,6 +145,21 @@ $sizes: (
         }
       }
     }
+    .ant-pagination {
+      position: relative;
+      .ant-pagination-item-active {
+        background: #1890ff;
+        border-color: white;
+        border-radius: 50%;
+        a {
+          color: white;
+        }
+      }
+      .ant-pagination-options {
+        position: absolute;
+        left: 0;
+      }
+    }
   }
 }
 .ant-card {

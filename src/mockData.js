@@ -30,3 +30,26 @@ export const tableData = [
   { no: 1, customer: "Celica", location: "New York", favouriteProduct:"Adidas",orders:30,totalSpending:2456 },
   { no: 1, customer: "Celica", location: "New York", favouriteProduct:"Adidas",orders:30,totalSpending:2456 },
 ];
+
+export const productData = [
+  { no: 1, product: "Celica",sales:30,total:2456 },
+  { no: 2, product: "Celica",sales:30,total:2456 },
+  { no: 3, product: "Celica",sales:30,total:2456 },
+  { no: 4, product: "Celica",sales:30,total:2456 },
+  { no: 5, product: "Celica",sales:30,total:2456 },
+  { no: 6, product: "Celica",sales:30,total:2456 },
+  { no: 7, product: "Celica",sales:30,total:2456 },
+  { no: 8, product: "Celica",sales:30,total:2456 },
+  { no: 9, product: "Celica",sales:30,total:2456 },
+  { no: 10, product: "Celica",sales:30,total:2456 },
+  { no: 11, product: "Celica",sales:30,total:2456 },
+  { no: 12, product: "Celica",sales:30,total:2456 },
+  { no: 13, product: "Celica",sales:30,total:2456 },
+  { no: 14, product: "Celica",sales:30,total:2456 },
+  { no: 15, product: "Celica",sales:30,total:2456 },
+  { no: 16, product: "Celica",sales:30,total:2456 },
+  { no: 17, product: "Celica",sales:30,total:2456 },
+  { no: 18, product: "Celica",sales:30,total:2456 },
+  { no: 19, product: "Celica",sales:30,total:2456 },
+  { no: 20, product: "Celica",sales:30,total:2456 },
+];

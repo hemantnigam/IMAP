@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import CustomersAnalytics from "../customersAnalytics";
-import ProductAnalytics from "../ProductAnalytics";
+import ProductAnalytics from "../product-analytics";
 import { DatePicker, Button } from "antd";
 import "./styles.scss";
 

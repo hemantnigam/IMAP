@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "antd";
 import "./styles.scss";
-import GridTable from "../../components/gridtable/GridTable";
+import GridTable from "../../components/gridtable";
 import { tableData } from "../../mockData";
 import BarChart from "../../components/barchart";
 import PieChart from "../../components/piechart";
@@ -99,7 +99,7 @@ function CustomersAnalytics() {
         </Card>
       </div>
       <div className="customer-analytics-table grid-table">
-        <GridTable rowData={tableData} columnsData={columnsData} />
+        <GridTable label="Top Customers" rowData={tableData} columnsData={columnsData} />
       </div>
     </div>
   );
