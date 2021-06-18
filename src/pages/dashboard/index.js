@@ -5,6 +5,7 @@ import BarChart from "../../components/barchart";
 import GeoChart from "../../components/geochart";
 import PieChart from "../../components/piechart";
 import LineChart from "../../components/linechart";
+import HorizontalBarChart from "../../components/horizontal-barchart";
 import DashboardHeader from "../../components/dashboard-header";
 import Highcharts from "highcharts";
 import HighchartsMaps from "highcharts/highmaps";
@@ -67,7 +68,8 @@ function Dashboard() {
       ]);
       if (pieChartData) {
         const tempData = pieChartData.map((item, index) => {
-          item.color = colorList[index % colorList.length];
+          if(item)
+            item.color = colorList[index % colorList.length];
         });
         setPieChartData(tempData);
       }
@@ -150,7 +152,7 @@ function Dashboard() {
         </div>
         <div
           key={key + 6}
-          data-grid={{ x: 0, y: 3, w: 9, h: 9, minW: 3, minH: 6 }}
+          data-grid={{ x: 0, y: 3, w: 5, h: 9, minW: 3, minH: 6 }}
         >
           <Card bordered={false}>
             <BarChart data={barChartData || []} />
@@ -162,6 +164,14 @@ function Dashboard() {
         >
           <Card bordered={false}>
             <LineChart />
+          </Card>
+        </div>
+        <div
+          key={key + 8}
+          data-grid={{ x: 5, y: 3, w: 4, h: 9, minW: 3, minH: 3 }}
+        >
+          <Card bordered={false}>
+            <HorizontalBarChart />
           </Card>
         </div>
       </GridLayout>
