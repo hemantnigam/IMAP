@@ -6,13 +6,16 @@ import GeoChart from "../../components/geochart";
 import PieChart from "../../components/piechart";
 import LineChart from "../../components/linechart";
 import HorizontalBarChart from "../../components/horizontal-barchart";
-import DashboardHeader from "../../components/dashboard-header";
 import Highcharts from "highcharts";
 import HighchartsMaps from "highcharts/highmaps";
+import { useSelector } from "react-redux";
 import { Card } from "antd";
 import "./styles.scss";
 
 function Dashboard() {
+  const isSidebarCollapsed = useSelector(
+    (state) => state.app.isSidebarCollapsed
+  );
   const colorList = [
     "#37a2da",
     "#32c5e9",
@@ -53,7 +56,20 @@ function Dashboard() {
         parseInt(
           window
             .getComputedStyle(document.getElementsByClassName("layout")[0])
-            .width.replace("px")
+            .width.replace("px","")
+        )
+      );
+      reFlowAllCharts();
+    }, 500);
+  }, [isSidebarCollapsed]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setInnerWidth(
+        parseInt(
+          window
+            .getComputedStyle(document.getElementsByClassName("layout")[0])
+            .width.replace("px","")
         )
       );
       setBarChartData([
@@ -68,15 +84,15 @@ function Dashboard() {
       ]);
       if (pieChartData) {
         const tempData = pieChartData.map((item, index) => {
-          if(item)
-            item.color = colorList[index % colorList.length];
+          if (item) item.color = colorList[index % colorList.length];
+          return item;
         });
         setPieChartData(tempData);
       }
 
       reFlowAllCharts();
     }, 0);
-    console.log("changes");
+    // eslint-disable-next-line
   }, []);
   const reFlowAllCharts = () => {
     for (let i = 0; i < Highcharts.charts.length; i += 1) {
@@ -98,7 +114,7 @@ function Dashboard() {
       {/* <DashboardHeader /> */}
       <GridLayout
         className="layout"
-        cols={15}
+        cols={!isSidebarCollapsed ? 15 : 18}
         rowHeight={30}
         width={innerWidth}
         autoSize={true}

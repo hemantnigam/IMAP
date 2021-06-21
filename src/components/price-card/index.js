@@ -13,6 +13,7 @@ function PriceCard({ label, actualValue, percentValue, isProfit }) {
       setClassName("net-percent-value loss");
       setPercentValue(`-${percentValue}%`);
     }
+    // eslint-disable-next-line
   }, []);
 
   return (

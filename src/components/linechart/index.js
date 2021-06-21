@@ -4,7 +4,7 @@ import HighchartsReact from "highcharts-react-official";
 import ImapChart from "../imap-chart";
 
 function LineChart() {
-  const colorList = ["#11A1FD", "#5A75F8"];
+  // const colorList = ["#11A1FD", "#5A75F8"];
   const options = {
     chart: {
       type: "areaspline",

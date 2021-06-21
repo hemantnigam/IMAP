@@ -3,24 +3,10 @@ import GridTable from "../../components/gridtable";
 import LineChart from "../../components/linechart";
 import HorizontalBarChart from "../../components/horizontal-barchart";
 import "./styles.scss";
-import { useEffect, useState } from "react";
 import { Card } from "antd";
 import PriceCard from "../../components/price-card"
 
 function ProductAnalytics() {
-  const [barChartData, setBarChartData] = useState();
-  useEffect(() => {
-    setBarChartData([
-      {
-        data: [120, 200, 150, 80, 70, 110, 130],
-        name: "Active",
-      },
-      {
-        data: [10, 20, 250, 180, 170, 10, 70],
-        name: "New",
-      },
-    ]);
-  }, []);
   const columnsData = Object.keys(productData[0]).map((item) => ({
     title: item,
     dataIndex: item,

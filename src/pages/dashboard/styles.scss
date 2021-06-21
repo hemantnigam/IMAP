@@ -1,8 +1,10 @@
 @import "../../styles/colors";
 @import "../../styles/common";
 
-.layout {
-  background-color: $grey1;
-  height: 100% !important;
-  width: 100% !important;
+.dashboard {
+  .layout {
+    background-color: $grey1;
+    height: 100% !important;
+    width: 100% !important;
+  }
 }
